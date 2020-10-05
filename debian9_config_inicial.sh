@@ -6,9 +6,9 @@
 #essas duas linhas abaixo só consegui rodar manualmente até agora
 #eu não consegui automatizar ainda
 
-#instalar o sudo pelo apt
-#sudo apt-get install sudo -y
-#sh -c 'su echo "${USER} ALL=(ALL:ALL) ALL" >> /etc/sudoers' 
+#instalar o sudo pelo apt ou rodar o script como ROOT
+apt-get install sudo -y
+sh -c 'su echo "${USER} ALL=(ALL:ALL) ALL" >> /etc/sudoers' 
 
 
 sudo apt-get install apt-transport-https -y
