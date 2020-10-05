@@ -8,6 +8,8 @@
 
 #instalar o sudo pelo apt ou rodar o script como ROOT
 apt-get install sudo -y
+mv /etc/sudoers /etc/sudoers.old
+touch /etc/sudoers
 sh -c 'su echo "${USER} ALL=(ALL:ALL) ALL" >> /etc/sudoers' 
 
 
