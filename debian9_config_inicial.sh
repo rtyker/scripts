@@ -23,7 +23,8 @@ wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-
 echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian bionic contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
 
 sudo apt update
-sudo apt install virtualbox-6.0 -y
+
+sudo apt install lightdm -y
 sudo apt install snap -y
 sudo apt install snapd -y
 sudo apt install htop -y
@@ -32,7 +33,12 @@ sudo apt install rar unrar -y
 sudo apt-get install p7zip -y
 sudo apt-get install p7zip-rar -y
 sudo apt install net-tools -y
+sudo apt install tilix -y
 
+#se quiser o ambiente grafico cinnamon
+sudo apt install cinnamon -y
+
+sudo apt install virtualbox-6.0 -y
 
 
 #pacotes necessarios para VPN funcionar
@@ -48,7 +54,7 @@ sudo apt-get install libnss3-tools -y
 sudo apt-get install -y python3-pip
 
 #pycharm
-sudo snap install pycharm-community --classic
+#sudo snap install pycharm-community --classic
 
 #clementine
 sudo apt install clementine -y
@@ -78,16 +84,14 @@ sudo apt install thunderbird-l10n-pt-br
 sudo apt install firefox-esr-l10n-pt-br
 
 
-
-
 ##################################### instalar samba
 sudo apt install samba -y
 
 #alterar o arquivo de configuração adicionando os compartilhamentos
-sudo gedit /etc/samba/smb.conf
+#sudo gedit /etc/samba/smb.conf
 
 #reiniciar o samba
-sudo service smbd restart
+#sudo service smbd restart
 
 
 #desinstalar o youtube-dl origina do repo se estiver instalado
@@ -106,40 +110,41 @@ hash -r
 
 
 #para instalar o Guest Additions 
-apt-get install linux-headers-`uname -r`
-apt-get install gcc make perl
+apt-get install linux-headers-`uname -r` -y
+apt-get install gcc make perl -y
 
 #monte a imagem do Vbox e rode o instalador
 
-//************** SE QUISER MONTAR UM FTP *********************************************/
+#//************** SE QUISER MONTAR UM FTP *********************************************/
 
-apt-get install proftpd
-addgroup ftpgroup
-adduser nomeDoUusario -shell /bin/false -ingroup ftpgroup -home /ftpshare
+#apt-get install proftpd -y
+#addgroup ftpgroup
+#adduser nomeDoUusario -shell /bin/false -ingroup ftpgroup -home /ftpshare
 
-Edit file /etc/proftpd/proftpd.conf 
+#Edit file /etc/proftpd/proftpd.conf 
 
-/*************************************/
-[...]
-UseIPv6 off
-[...]
+#*************************************/
+#[...]
+#UseIPv6 off
+#[...]
 
-    RootLogin	off
-    RequireValidShell off
+#    RootLogin	off
+#    RequireValidShell off
 
-DefaultRoot  ~
+#DefaultRoot  ~
 
-<Limit LOGIN>
-    DenyGroup !ftpgroup
-</Limit>
-/**************************************/
+#<Limit LOGIN>
+#    DenyGroup !ftpgroup
+#</Limit>
+
+#**************************************/
 
 
-service proftpd restart
+#service proftpd restart
 
 se quiser usar TLS no FTP
-apt-get install openssl
+apt-get install openssl -y
 openssl req -new -x509 -keyout /etc/proftpd/ssl/proftpd.key.pem -days 365 -nodes -out /etc/proftpd/ssl/proftpd.cert.pem 
 mkdir /etc/proftpd/ssl
 
-//***********************************************************************************/
+#//***********************************************************************************/
