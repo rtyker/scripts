@@ -53,7 +53,8 @@ sudo apt-get install libglu1-mesa-dev -y
 sudo apt-get install libnss3-tools -y
 
 #instalar python
-sudo apt-get install -y python3-pip
+sudo apt-get install -y 
+sudo apt-get install python3-pip -y
 
 #pycharm
 #sudo snap install pycharm-community --classic
@@ -82,8 +83,8 @@ sudo apt install sqlitebrowser -y
 sudo apt install filezilla -y
 
 #tradução para o portugues PT-BR
-sudo apt install thunderbird-l10n-pt-br
-sudo apt install firefox-esr-l10n-pt-br
+sudo apt install thunderbird-l10n-pt-br -y
+sudo apt install firefox-esr-l10n-pt-br -y
 
 
 ##################################### instalar samba
@@ -144,9 +145,9 @@ apt-get install gcc make perl -y
 
 #service proftpd restart
 
-se quiser usar TLS no FTP
-apt-get install openssl -y
-openssl req -new -x509 -keyout /etc/proftpd/ssl/proftpd.key.pem -days 365 -nodes -out /etc/proftpd/ssl/proftpd.cert.pem 
-mkdir /etc/proftpd/ssl
+#se quiser usar TLS no FTP
+#apt-get install openssl -y
+#openssl req -new -x509 -keyout /etc/proftpd/ssl/proftpd.key.pem -days 365 -nodes -out /etc/proftpd/ssl/proftpd.cert.pem 
+#mkdir /etc/proftpd/ssl
 
 #//***********************************************************************************/
